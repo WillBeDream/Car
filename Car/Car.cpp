@@ -13,6 +13,7 @@ using namespace std::chrono_literals;
 #define Escape 27
 #define Enter 13
 
+
 #define MIN_TANK_VOLUME 20
 #define MAX_TANK_VOLUME 80
 
@@ -230,6 +231,11 @@ public:
 			case 'w':
 				if(driver_inside && engine.started())
 					this->speed += 10;
+				break;
+			case 'S':
+			case 's':
+				if (driver_inside && engine.started())
+					this->speed -= 10;
 				break;
 			case Escape:
 				stop_engine();
